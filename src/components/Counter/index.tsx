@@ -1,15 +1,27 @@
+import Stack from '../Stack';
 import useCounter from './vm';
+import './styles.css';
 
 const Counter = () => {
   const { count, increment, decrement, reset } = useCounter();
 
   return (
-    <div>
-      <div>{count}</div>
-      <button onClick={increment}>Increment</button>
-      <button onClick={decrement}>Decrement</button>
-      <button onClick={reset}>Reset</button>
-    </div>
+    <Stack className="counter">
+      <Stack direction="row" alignItems="center">
+        <button aria-label="decrement" onClick={decrement}>
+          -
+        </button>
+        <div className="count" data-testid="count">
+          {count}
+        </div>
+        <button aria-label="increment" onClick={increment}>
+          +
+        </button>
+      </Stack>
+      <button className="reset" onClick={reset}>
+        Reset
+      </button>
+    </Stack>
   );
 };
 

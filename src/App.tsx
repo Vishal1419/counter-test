@@ -1,12 +1,12 @@
-import React from 'react';
 import './App.css';
 import Counter from './components/Counter';
+import Stack from './components/Stack';
 
 function App() {
   return (
-    <div className="App">
+    <Stack justifyContent="center" alignItems="center" className="app">
       <Counter />
-    </div>
+    </Stack>
   );
 }
 
